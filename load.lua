@@ -8,7 +8,7 @@
 -- g = grid.connect()
 -- local g = include('lib/oscgrid')
 
-local touchoscsourceip = "10.0.1.11"
+local touchoscsourceip = "192.168.1.3"
 local touchoscsourceport = 9000
 
 local grds = {}
