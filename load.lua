@@ -44,19 +44,11 @@ function connect()
   grid_w = g.cols
   grid_h = g.rows
   --g:rotation(0)
-  
-  arc.update_devices()
-  ar = include('lib/oscarc')
-  local ar_id = 2
-  ar.arc.add(ar_id, "m54321", "oscarc", {})
-  ar.delta = oscarc_delta
 
   g.oscdest = {touchoscsourceip,touchoscsourceport}
-  ar.oscdest = {touchoscsourceip,touchoscsourceport}
 
   osc.event = function(path, args, from)
     g.osc_in(path, args, from, g_id)
-    ar.osc_in(path, args, from, ar_id)
   end
   
   --print ("cols/rows", grid_w, grid_h)
@@ -74,10 +66,6 @@ function oscgrid_key(x, y, s)
     --g:refresh()
   end
   --print (x .. ' ' .. y .. ' ' .. s)
-end
-
-function oscarc_delta(n, delta)
-  --print (n , delta)  
 end
 
 
